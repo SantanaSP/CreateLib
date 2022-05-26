@@ -10,7 +10,6 @@
   "author": "Santana",
   "license": "MIT",
   "repository": "https://github.com/SantanaSP/CreateLib",
-  "packageManager": "pnpm@6.11.0",
   "type": "module",
   "devDependencies": {
     "@types/chai": "^4.3.1",
