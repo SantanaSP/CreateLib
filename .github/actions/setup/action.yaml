@@ -1,0 +1,15 @@
+name: "Setup & Testing"
+runs:
+  using: "composite"
+  steps:
+    - run: corepack enable
+      shell: bash
+    - uses: actions/setup-node@v3
+      with:
+        node-version: "16"
+        cache: "pnpm"
+        registry-url: "https://npm.pkg.github.com/"
+    - run: pnpm i --frozen-lockfile
+      shell: bash
+    - run: pnpm test
+      shell: bash

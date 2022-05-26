@@ -1,0 +1,15 @@
+name: Publish
+on:
+  push:
+    tags:
+      - v**
+      - debug/v**
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
